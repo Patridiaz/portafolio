@@ -1,45 +1,73 @@
 .header {
   position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: rgba(18, 18, 18, 0.9); /* fondo oscuro con transparencia */
-  backdrop-filter: blur(8px); /* difuminado elegante */
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1000px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: 100px;
   z-index: 1000;
-  padding: 1rem 2rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  padding: 0.75rem 2rem;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
 
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1080px;
-  margin: 0 auto;
   width: 100%;
 }
 
 .logo {
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: #fff;
+  font-weight: 800;
+  font-size: 1.2rem;
+  background: linear-gradient(to right, #fff, var(--accent-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   letter-spacing: 1px;
-  text-transform: uppercase;
 }
 
 .nav a {
-  margin-left: 2rem;
-  color: #aaa;
+  margin-left: 1.5rem;
+  color: var(--text-secondary);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .nav a:hover {
-  color: #1e88e5;
+  color: var(--text-primary);
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-secondary);
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
 }
 
 @media (max-width: 768px) {
-  .nav {
-    display: none; /* simplificamos para este ejemplo; puedes integrar un menú móvil si deseas */
+  .header {
+    top: 0;
+    width: 100%;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
   }
 }

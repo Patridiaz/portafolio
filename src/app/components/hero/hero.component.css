@@ -3,64 +3,62 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #121212; /* Fondo oscuro */
-  color: #fff; /* Texto blanco para buen contraste */
+  min-height: 100vh;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  padding: 4rem;
+  max-width: 800px;
   text-align: center;
-  padding: 0 2rem;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: #fff;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -2px;
 }
 
 .hero h1 strong {
-  color: #1e88e5; /* Resalta el nombre en azul */
+  background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero p {
-  font-size: 1.25rem;
-  font-weight: 300;
-  max-width: 700px;
-  margin: 0 auto 2rem;
-  color: #b0b0b0; /* Texto gris suave para un contraste más suave */
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+  font-weight: 400;
 }
 
 .hero button {
   font-size: 1rem;
-  padding: 1rem 2rem;
-  background-color: #1e88e5;
+  padding: 1.25rem 3rem;
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
   color: #fff;
   border: none;
-  border-radius: 50px;
+  border-radius: 100px;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  letter-spacing: 1px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 20px -5px rgba(138, 43, 226, 0.4);
 }
 
 .hero button:hover {
-  background-color: #1565c0; /* Color más oscuro al hacer hover */
-  transform: translateY(-5px); /* Eleva el botón al hacer hover */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Agrega una sombra sutil */
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 20px 40px -10px rgba(138, 43, 226, 0.6);
 }
 
 @media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero p {
-    font-size: 1.125rem;
-  }
-
-  .hero button {
-    font-size: 0.875rem;
-    padding: 0.75rem 1.5rem;
+  .hero-content {
+    padding: 2rem;
   }
 }
